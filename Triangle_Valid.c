@@ -1,0 +1,40 @@
+#include <stdio.h>
+void Triangle_Valid(int, int, int);
+
+void Triangle_Valid(int side1, int side2, int side3)
+{
+       if ((side1 + side2) > side3)
+       {
+              if ((side2 + side3) > side1)
+              {
+                     if ((side1 + side3) > side2)
+                     {
+                            printf("Triangle is valid.");
+                     }
+                     else
+                     {
+                            printf("Triangle is not valid.");
+                     }
+              }
+              else
+              {
+                     printf("Triangle is not valid.");
+              }
+       }
+       else
+       {
+              printf("Triangle is not valid.");
+       }
+}
+
+int main()
+{
+       int side1, side2, side3;
+
+       printf("Enter three sides of triangle: \n");
+       scanf("%d%d%d", &side1, &side2, &side3);
+
+       Triangle_Valid(side1, side2, side3);
+
+       return 0;
+}
